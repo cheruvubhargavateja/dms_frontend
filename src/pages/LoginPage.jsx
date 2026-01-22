@@ -47,15 +47,15 @@ function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
+    <div className="flex min-h-screen items-center justify-center bg-muted/30 px-4 py-8 sm:py-12">
       <Card
         title="Sign in"
         description="Access your dashboard with your account credentials."
         className="w-full max-w-md"
       >
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-1">
-            <label className="text-sm font-medium" htmlFor="email">
+        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+          <div className="space-y-1.5">
+            <label className="text-sm font-medium block" htmlFor="email">
               Email
             </label>
             <input
@@ -65,12 +65,12 @@ function LoginPage() {
               required
               value={form.email}
               onChange={handleChange}
-              className="w-full rounded-md border px-3 py-2"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               placeholder="you@example.com"
             />
           </div>
-          <div className="space-y-1">
-            <label className="text-sm font-medium" htmlFor="password">
+          <div className="space-y-1.5">
+            <label className="text-sm font-medium block" htmlFor="password">
               Password
             </label>
             <input
@@ -80,22 +80,22 @@ function LoginPage() {
               required
               value={form.password}
               onChange={handleChange}
-              className="w-full rounded-md border px-3 py-2"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
               placeholder="••••••••"
             />
           </div>
-          {error ? <p className="text-sm text-destructive">{error}</p> : null}
-          <div className="flex items-center gap-2">
-            <Button type="submit" disabled={authLoading} className="flex-1">
+          {error ? <p className="text-sm text-destructive bg-destructive/10 p-2 rounded-md">{error}</p> : null}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2">
+            <Button type="submit" disabled={authLoading} className="flex-1 w-full sm:w-auto">
               {authLoading ? 'Signing in…' : 'Sign in'}
             </Button>
-            <Button type="button" variant="ghost" onClick={handleAbort} disabled={!abortRef.current}>
+            <Button type="button" variant="ghost" onClick={handleAbort} disabled={!abortRef.current} className="w-full sm:w-auto">
               Abort
             </Button>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground text-center sm:text-left pt-2">
             New here?{' '}
-            <Link to="/register" className="text-primary underline">
+            <Link to="/register" className="text-primary underline hover:text-primary/80 font-medium">
               Create an account
             </Link>
           </p>

@@ -11,13 +11,13 @@ function InvoiceSummary() {
     <Card title="Recent invoices" description="Sample data for structure illustration">
       <ul className="divide-y divide-border text-sm">
         {demoInvoices.map((invoice) => (
-          <li key={invoice.id} className="flex items-center justify-between py-2">
-            <div>
+          <li key={invoice.id} className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="space-y-1">
               <div className="font-medium">{invoice.id}</div>
-              <div className="text-muted-foreground">{invoice.customer}</div>
+              <div className="text-muted-foreground text-xs sm:text-sm">{invoice.customer}</div>
             </div>
-            <div className="text-right">
-              <span className="text-muted-foreground">{invoice.status}</span>
+            <div className="flex items-center justify-between sm:flex-col sm:items-end sm:text-right gap-2">
+              <span className="text-xs sm:text-sm text-muted-foreground">{invoice.status}</span>
               <div className="font-semibold">{invoice.amount}</div>
             </div>
           </li>

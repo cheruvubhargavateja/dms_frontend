@@ -11,10 +11,10 @@ function InvoicesPage() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-semibold">Invoices</h1>
-        <Button size="md">New invoice</Button>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="text-xl sm:text-2xl font-semibold">Invoices</h1>
+        <Button size="sm" className="w-full sm:w-auto">New invoice</Button>
       </div>
       <InvoiceForm onCreated={handleCreated} />
       <InvoiceList refreshKey={refreshKey} />

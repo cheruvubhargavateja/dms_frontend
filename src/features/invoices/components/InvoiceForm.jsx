@@ -151,7 +151,7 @@ function InvoiceForm({ onCreated }) {
                 type="text"
                 value={address.label}
                 onChange={(e) => handleAddressChange(type, index, 'label', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
                 placeholder="Origin, Warehouse A, etc."
               />
             </div>
@@ -161,7 +161,7 @@ function InvoiceForm({ onCreated }) {
                 type="text"
                 value={address.line1}
                 onChange={(e) => handleAddressChange(type, index, 'line1', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
                 placeholder="123 Main St"
               />
             </div>
@@ -172,7 +172,7 @@ function InvoiceForm({ onCreated }) {
               type="text"
               value={address.line2}
               onChange={(e) => handleAddressChange(type, index, 'line2', e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               placeholder="Suite or floor (optional)"
             />
           </div>
@@ -183,7 +183,7 @@ function InvoiceForm({ onCreated }) {
                 type="text"
                 value={address.city}
                 onChange={(e) => handleAddressChange(type, index, 'city', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               />
             </div>
             <div className="space-y-1">
@@ -192,7 +192,7 @@ function InvoiceForm({ onCreated }) {
                 type="text"
                 value={address.state}
                 onChange={(e) => handleAddressChange(type, index, 'state', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               />
             </div>
             <div className="space-y-1">
@@ -201,7 +201,7 @@ function InvoiceForm({ onCreated }) {
                 type="text"
                 value={address.postalCode}
                 onChange={(e) => handleAddressChange(type, index, 'postalCode', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               />
             </div>
           </div>
@@ -212,7 +212,7 @@ function InvoiceForm({ onCreated }) {
                 type="text"
                 value={address.country}
                 onChange={(e) => handleAddressChange(type, index, 'country', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               />
             </div>
             {addresses.length > 1 && (
@@ -253,7 +253,7 @@ function InvoiceForm({ onCreated }) {
               type="text"
               value={item.description}
               onChange={(e) => handleItemChange(index, 'description', e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               placeholder="Freight, boxes, pallets, etc."
             />
           </div>
@@ -266,7 +266,7 @@ function InvoiceForm({ onCreated }) {
                 step="1"
                 value={item.quantity}
                 onChange={(e) => handleItemChange(index, 'quantity', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               />
             </div>
             <div className="space-y-1">
@@ -277,7 +277,7 @@ function InvoiceForm({ onCreated }) {
                 step="0.01"
                 value={item.unitPrice}
                 onChange={(e) => handleItemChange(index, 'unitPrice', e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               />
             </div>
             <div className="flex items-end">
@@ -312,7 +312,7 @@ function InvoiceForm({ onCreated }) {
       description="Send shipment details, addresses, and line items to the backend API."
       className="bg-card"
     >
-      <form className="space-y-6" onSubmit={handleSubmit}>
+      <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1">
             <label className="block text-xs font-medium text-muted-foreground">
@@ -322,7 +322,7 @@ function InvoiceForm({ onCreated }) {
               type="text"
               value={invoiceNumber}
               onChange={(e) => setInvoiceNumber(e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               placeholder="INV-0001"
               required
             />
@@ -338,7 +338,7 @@ function InvoiceForm({ onCreated }) {
                 step="0.01"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+                className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
                 placeholder={calculatedTotal}
                 required
               />
@@ -356,7 +356,7 @@ function InvoiceForm({ onCreated }) {
               type="text"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
               placeholder="Customer company (optional)"
             />
           </div>
@@ -365,7 +365,7 @@ function InvoiceForm({ onCreated }) {
             <select
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
             >
               <option value="pending">Pending</option>
               <option value="paid">Paid</option>
@@ -381,7 +381,7 @@ function InvoiceForm({ onCreated }) {
               type="datetime-local"
               value={pickupAt}
               onChange={(e) => setPickupAt(e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
             />
           </div>
           <div className="space-y-1">
@@ -390,7 +390,7 @@ function InvoiceForm({ onCreated }) {
               type="datetime-local"
               value={expectedEmailAt}
               onChange={(e) => setExpectedEmailAt(e.target.value)}
-              className="w-full rounded-md border border-border bg-background px-3 py-2 text-sm"
+              className="w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:border-primary/50"
             />
           </div>
         </div>
@@ -442,9 +442,9 @@ function InvoiceForm({ onCreated }) {
           {renderItems()}
         </div>
 
-        {error && <div className="rounded-md bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</div>}
+        {error && <div className="rounded-md bg-destructive/10 border border-destructive/20 px-3 py-2.5 text-sm text-destructive">{error}</div>}
         {success && (
-          <div className="rounded-md bg-emerald-500/10 px-3 py-2 text-sm text-emerald-600">{success}</div>
+          <div className="rounded-md bg-primary/10 border border-primary/20 px-3 py-2.5 text-sm text-primary">{success}</div>
         )}
 
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
