@@ -33,6 +33,8 @@ jobs:
       # 4. Build React app (Vite → dist)
       - name: Build app
         run: npm run build
+        env:
+          VITE_API_BASE_URL: https://dms-teja-app-cjejftdud8gfgxf9.southindia-01.azurewebsites.net/api
 
       # 5. Deploy to Azure Static Web Apps
       - name: Deploy
