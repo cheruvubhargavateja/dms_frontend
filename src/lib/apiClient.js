@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'https://dms-teja-app-cjejftdud8gfgxf9.southindia-01.azurewebsites.net/api',
   timeout: 100000,
 })
 
